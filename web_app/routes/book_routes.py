@@ -48,5 +48,5 @@ def create_book():
     #     "book": dict(request.form)
     # })
 
-    flash(f"Book '{new_book.title}' created successfully!", "success")
+    # flash(f"Book '{new_book.title}' created successfully!", "success")
     return redirect(f"/books")
