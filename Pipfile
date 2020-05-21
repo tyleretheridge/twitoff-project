@@ -12,6 +12,8 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 requests = "*"
 scikit-learn = "*"
+gunicorn = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
