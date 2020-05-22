@@ -1,7 +1,7 @@
 # web_app/routes/twitter_routes.py
 
-from flask import Blueprint, render_template, jsonify
-
+from flask import Blueprint
+# from flask import render_template, jsonify
 from web_app.services.twitter_service import api as twitter_api
 from web_app.services.basilica_service import connection as basilica_connection
 from web_app.models import User, Tweet, db
@@ -14,18 +14,9 @@ def get_user(screen_name=None):
     print(screen_name)
 
     twitter_user = twitter_api.get_user(screen_name)
-    # statuses = twitter_api.user_timeline(screen_name,
-    #                                      tweet_mode="extended",
-    #                                      count=150,
-    #                                      exclude_replies=True,
-    #                                      include_rts=False)
     statuses = twitter_api.user_timeline(screen_name,
                                          tweet_mode="extended",
                                          count=150)
-    # return jsonify({
-    #     "user": user._json,
-    #     "tweets": [status.full_text for status in statuses]
-    # })
 
     # get existing user from the db or initialize a new one:
     db_user = User.query.get(twitter_user.id) or User(id=twitter_user.id)

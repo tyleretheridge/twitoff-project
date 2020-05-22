@@ -19,15 +19,11 @@ def list_books():
 
 @book_routes.route("/books")
 def list_books_for_humans():
-    # books = [
-    #     {"id": 1, "title": "Book 1"},
-    #     {"id": 2, "title": "Book 2"},
-    #     {"id": 3, "title": "Book 3"},
-    # ]
-
     book_records = Book.query.all()
     print(book_records)
-    return render_template("books.html", message="Here's some books", books=book_records)
+    return render_template("books.html",
+                           message="Here's some books",
+                           books=book_records)
 
 
 @book_routes.route("/books/new")
@@ -39,14 +35,10 @@ def new_book():
 def create_book():
     print("FORM DATA:", dict(request.form))
 
-    new_book = Book(title=request.form["book_title"], author_id=request.form["author_name"])
+    new_book = Book(title=request.form["book_title"],
+                    author_id=request.form["author_name"])
     db.session.add(new_book)
     db.session.commit()
 
-    # return jsonify({
-    #     "message": "BOOK CREATED OK (TODO)",
-    #     "book": dict(request.form)
-    # })
-
     flash(f"Book '{new_book.title}' created successfully!", "success")
-    return redirect(f"/books")
+    return redirect("/books")

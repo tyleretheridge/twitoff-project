@@ -12,10 +12,13 @@ def index():
 
 @home_routes.route("/hello")
 def hello():
-    x = 2 + 2
-    return f"Hello World! {x}"
+    return "Welcome to my Tweet Predictions app!"
 
 
 @home_routes.route("/about")
 def about():
-    return "About me"
+    about_string = """
+    This is a web app designed to take in a user generated tweet
+     and see which twitter user is more likely to tweet that text.
+    """
+    return about_string

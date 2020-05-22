@@ -1,14 +1,14 @@
 # web_app/services/basilica_service.py
 
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 from basilica import Connection
 
 load_dotenv()
 BASILICA_API_KEY = os.getenv("BASILICA_API_KEY", default="OOPS")
 
+# Create connection to Basilica API object
 connection = Connection(BASILICA_API_KEY)
-
 print(type(connection))
 
 
