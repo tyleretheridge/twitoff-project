@@ -51,7 +51,7 @@ def predict():
 
     classifier = LogisticRegression()
     # for example
-    classifier.fit([embeddings], labels)
+    classifier.fit(embeddings, labels)
 
     print("-----------------")
     print("MAKING A PREDICTION...")
