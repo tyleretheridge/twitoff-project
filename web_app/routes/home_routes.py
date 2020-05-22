@@ -21,4 +21,5 @@ def about():
     This is a web app designed to take in a user generated tweet
      and see which twitter user is more likely to tweet that text.
     """
-    return about_string
+    return render_template("about.html",
+                           message=about_string)
