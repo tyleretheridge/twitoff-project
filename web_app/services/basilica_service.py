@@ -2,17 +2,13 @@
 
 from dotenv import load_dotenv
 import os
-import basilica
+from basilica import Connection
 
 load_dotenv()
-BASILICA_API_KEY = os.getenv("BASILICA_API_KEY")
+BASILICA_API_KEY = os.getenv("BASILICA_API_KEY", default="OOPS")
 
-sentences = [
-    "This is a sentence!",
-    "This is a similar sentence!",
-    "I don't think this sentence is very similar at all...",
-]
-connection = basilica.Connection(BASILICA_API_KEY)
+connection = Connection(BASILICA_API_KEY)
+
 print(type(connection))
 
 

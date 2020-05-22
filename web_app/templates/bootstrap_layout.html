@@ -2,7 +2,7 @@
 <html>
   <head>
     {% block title %}
-      <title>My Starter Web App | Helps students learn how to use the Flask Python package.</title>
+      <title>Twitoff Predictions | Learning how to use the Flask Python package.</title>
     {% endblock %}
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -29,8 +29,8 @@
     <!-- see: https://getbootstrap.com/docs/4.0/components/navbar/ -->
     {% set nav_links = [
       ('/', 'prediction_form', 'New Prediction'),
-      ('/books', 'books', 'Books'),
-      ('/books/new', 'new_book', 'New Book')
+      ('/books', 'books', 'Books List'),
+      ('/books/new', 'new_book', 'Make a New Book')
     ] -%}
     {% set active_page = active_page|default('index') -%}
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -67,8 +67,8 @@
       <!-- FOOTER -->
       <div id="footer">
         <hr>
-        &copy; Copyright 2020 Prof. MJ Rossetti |
-        <a href="https://github.com/prof-rossetti/">source</a>
+        &copy; Copyright 2020 Tyler Etheridge |
+        <a href="https://github.com/tyleretheridge">source</a>
       </div>
     </div>
 
@@ -78,7 +78,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript">
 
-        console.log("Thanks for the page visit!")
+        console.log("Thanks for using my app!")
 
         // closes data-dismiss="alert" flash messages
         // see: https://getbootstrap.com/docs/4.3/components/alerts/#javascript-behavior

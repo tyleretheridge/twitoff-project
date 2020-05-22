@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import tweepy
-from pprint import pprint
+# from pprint import pprint
 
 load_dotenv()
 
@@ -19,36 +19,30 @@ print("AUTH", auth)
 
 api = tweepy.API(auth)
 print("API", api)
-#print(dir(api))
-
-
-
-
+# print(dir(api))
 
 
 if __name__ == "__main__":
 
     screen_name = input("Please input a twitter user name:  ")
 
-
     # Get data about a given user
-    user = api.get_user("s2t2")  
-    #pprint(user._json)
+    user = api.get_user(screen_name)
+    # pprint(user._json)
     print(user.id)
     print(user.screen_name)
     print(user.friends_count)
     print(user.followers_count)
 
-
-
     # how to get tweets from a given twitter user?
-    #statuses = api.user_timeline("s2t2")
-    statuses = api.user_timeline("s2t2", tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
-    #status = statuses[0]
-    #pprint(dir(status))
-    #pprint(status._json)
-    #print(status.id)
-    #print(status.full_text)
+    # statuses = api.user_timeline("s2t2")
+    statuses = api.user_timeline(screen_name, tweet_mode="extended", count=150,
+                                 exclude_replies=True, include_rts=False)
+    # status = statuses[0]
+    # pprint(dir(status))
+    # pprint(status._json)
+    # print(status.id)
+    # print(status.full_text)
     for status in statuses:
         print("----")
         print(status.full_text)
